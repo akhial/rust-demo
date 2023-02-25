@@ -48,8 +48,8 @@ jobs:
       options: --security-opt seccomp=unconfined
     steps:
       - uses: actions/checkout@v3
-      - run: apt update && apt install sudo
-      - run: sudo apt install clang
+      - run: apt update && apt -y install sudo
+      - run: sudo apt -y install clang
       - uses: rui314/setup-mold@v1
       - name: Generate code coverage
         run: |
