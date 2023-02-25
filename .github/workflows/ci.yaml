@@ -48,7 +48,7 @@ jobs:
       options: --security-opt seccomp=unconfined
     steps:
       - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@stable
+      - run: apt update && apt install sudo
       - uses: rui314/setup-mold@v1
       - name: Generate code coverage
         run: |
